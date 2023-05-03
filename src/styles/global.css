@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black;
+  }
+  html {
+    font-family: Mukta, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+}
+
+@layer components {
+  .nav__row {
+    @apply w-full m-auto p-[12px] max-w-7xl flex justify-between items-center text-white static;
+  }
+  .nav__btn {
+    @apply mx-[8px] p-[8px] rounded-3xl cursor-not-allowed;
+  }
+  .nav__btn:active {
+    @apply translate-x-[-1px] translate-y-[1px];
+  }
+  .nav__btn:hover {
+    @apply hover:bg-red-800;
+  }
+  .nav__link:hover {
+    @apply underline-offset-4 underline;
+  }
+  .hamburger__menu {
+    @apply w-[40px] text-white mr-[16px] sm:hidden inline-block;
+  }
+  .hamburger__menu:active {
+    @apply translate-x-[-1px] translate-y-[1px];
+  }
+  .hamburger__menu:hover {
+    @apply text-red-500;
+  }
+  .hamburger__close--icon {
+    @apply absolute top-0 right-0 m-6;
+  }
+  .hamburger__link {
+    @apply my-6 ml-4;
+  }
+  .hamburger__btn {
+    @apply my-6;
+  }
+  .search__container {
+    @apply w-full flex items-center pb-6 flex-col md:flex-row justify-center;
+  }
+  .search__btn {
+    @apply bg-red-600 rounded-full px-5 py-3 mt-6 md:mt-0 active:transition-all active:translate-x-[-1px] active:translate-y-[1px] md:ml-4 md:px-10 hover:bg-red-700;
+  }
+  .search__text-area {
+    @apply border-none outline-none xl:ml-[122px] xl:w-[40%] md:w-[55%] w-[75%] h-[60px] rounded-full bg-white text-gray-800 text-2xl relative px-8;
+  }
+
+  .footer__links {
+    @apply text-sm;
+  }
+  .footer__link {
+    @apply pr-4 cursor-not-allowed;
+  }
+  .footer__link:hover {
+    @apply underline-offset-4 underline;
+  }
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: #242424;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translate(100%);
+}
+.menu--open {
+  max-height: 100vh;
+  overflow: hidden;
+}
+.menu--open .menu__backdrop {
+  visibility: visible !important;
+  opacity: 1;
+  transform: translate(0);
+}
