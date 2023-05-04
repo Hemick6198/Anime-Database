@@ -4,7 +4,7 @@ import Logo from "../Assets/logo.png";
 
 function Footer() {
   return (
-    <div className="w-full m-auto p-[12px] max-w-7xl flex justify-center items-center text-white h-[10vh]">
+    <div className="w-[100vw] m-auto p-[12px] flex justify-center items-center text-white h-[10vh] bg-[#161616]">
       <a href="/">
       <img
         src={Logo}
@@ -14,7 +14,7 @@ function Footer() {
         </a>
       <div className="flex flex-col pr-8 text-center">
         <h1>
-          <span className="md:text-3xl">Anime<span className="text-red-400">DB</span></span> © 2023
+          <span className="md:text-3xl md:ml-6">Anime<span className="text-red-400">DB</span></span> © 2023
         </h1>
         <p className="text-xs">Database Provided by © Jikan</p>
         <ul className="footer__links">

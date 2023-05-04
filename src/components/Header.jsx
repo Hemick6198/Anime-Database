@@ -20,57 +20,57 @@ function Header() {
           Anime <span className="text-red-400">DB</span>
         </h1>
       </a>
-      <div className="text-white hidden sm:inline-block">
+      <div className="text-white hidden md:inline-block">
         <a href="/" className="nav__link mx-[14px]">
           Random
         </a>
         <button className="nav__btn bg-red-600 rounded-3xl">Sign up</button>
         <button className="nav__btn bg-red-700 px-[14px]">Log in</button>
       </div>
-      <div>
+      <>
         <Bars3Icon className="hamburger__menu" onClick={openMenu} />
         <div className="menu__backdrop">
           <XMarkIcon
             className="w-[48px] hamburger__close--icon"
             onClick={closeMenu}
           />
-          <ul className="flex flex-col">
-            <a className="hamburger__link" onclick={closeMenu()} href="">
+          <ul className="flex flex-col w-full items-center">
+            <a className="hamburger__link" onClick={closeMenu()} href="">
               Random
             </a>
             <a
               className="hamburger__link cursor-not-allowed"
-              onclick={closeMenu()}
+              onClick={closeMenu()}
             >
               Contact
             </a>
             <a
               className="hamburger__link cursor-not-allowed"
-              onclick={closeMenu()}
+              onClick={closeMenu()}
             >
               About us
             </a>
             <a
               className="hamburger__link cursor-not-allowed"
-              onclick={closeMenu()}
+              onClick={closeMenu()}
             >
               Discord
             </a>
             <button
               className="hamburger__btn nav__btn bg-red-600 rounded-3xl"
-              onclick={closeMenu()}
+              onClick={closeMenu()}
             >
               Sign up
             </button>
             <button
               className="hamburger__btn nav__btn bg-red-700 px-[14px]"
-              onclick={closeMenu()}
+              onClick={closeMenu()}
             >
               Log in
             </button>
           </ul>
         </div>
-      </div>
+      </>
     </div>
   );
 }
