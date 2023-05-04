@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Logo from "../Assets/logo.png";
+import Logo from "../Assets/logo_pink.png";
 
 function Header() {
   function openMenu() {
@@ -13,7 +13,7 @@ function Header() {
   }
 
   return (
-    <div className="nav__row">
+    <div className="nav__row ">
       <a href="/" className="flex flex-row items-center">
         <img src={Logo} alt="" className="w-20" />
         <h1 className="md:text-[32px] text-[24px] font-bold sm:ml-2">

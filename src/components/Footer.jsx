@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import Logo from "../Assets/logo.png";
+import Logo from "../Assets/logo_pink.png";
 
 function Footer() {
   return (
@@ -12,7 +12,7 @@ function Footer() {
         className="w-20"
         />
         </a>
-      <div className="flex flex-col pr-8 text-center">
+      <div className="flex flex-col pr-8 text-center ">
         <h1>
           <span className="md:text-3xl md:ml-6">Anime<span className="text-red-400">DB</span></span> © 2023
         </h1>
