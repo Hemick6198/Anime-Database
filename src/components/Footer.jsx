@@ -4,7 +4,7 @@ import Logo from "../Assets/logo_pink.png";
 
 function Footer() {
   return (
-    <div className="w-[100vw] m-auto p-[12px] flex justify-center items-center text-white h-[10vh] bg-[#161616]">
+    <div className="footer__row">
       <a href="/">
       <img
         src={Logo}
@@ -12,7 +12,7 @@ function Footer() {
         className="w-20"
         />
         </a>
-      <div className="flex flex-col pr-8 text-center ">
+      <div className="flex flex-col pr-8 text-center">
         <h1>
           <span className="md:text-3xl md:ml-6">Anime<span className="text-red-400">DB</span></span> © 2023
         </h1>

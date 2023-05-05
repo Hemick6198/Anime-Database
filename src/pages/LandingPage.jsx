@@ -12,17 +12,17 @@ function LandingPage() {
   const [loading, setLoading] = useState(false);
   const [searchEl, setSearchEl] = useState("");
 
-  function onInput(key) {
-    if (key === "Enter" && searchEl) {
-      searchDatabase();
-    }
-  }
-
-  function searchDatabase(e) {
+  function searchDatabase() {
     setLoading(true);
     setTimeout(() => {
       navigate(`/search/${searchEl}`);
     }, 1000);
+  }
+  
+  function onInput(key) {
+    if (key === "Enter" && searchEl) {
+      searchDatabase();
+    }
   }
 
   return (

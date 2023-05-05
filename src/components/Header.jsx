@@ -24,8 +24,8 @@ function Header() {
         <a href="/" className="nav__link mx-[14px]">
           Random
         </a>
-        <button className="nav__btn bg-red-600 rounded-3xl">Sign up</button>
-        <button className="nav__btn bg-red-700 px-[14px]">Log in</button>
+        <button className="nav__btn bg-red-400 rounded-3xl">Sign up</button>
+        <button className="nav__btn bg-red-400 px-[14px]">Log in</button>
       </div>
       <>
         <Bars3Icon className="hamburger__menu" onClick={openMenu} />
@@ -57,13 +57,13 @@ function Header() {
               Discord
             </a>
             <button
-              className="hamburger__btn nav__btn bg-red-600 rounded-3xl"
+              className="hamburger__btn nav__btn bg-red-400 rounded-3xl"
               onClick={closeMenu()}
             >
               Sign up
             </button>
             <button
-              className="hamburger__btn nav__btn bg-red-700 px-[14px]"
+              className="hamburger__btn nav__btn bg-red-400 px-[14px]"
               onClick={closeMenu()}
             >
               Log in

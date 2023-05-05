@@ -9,7 +9,7 @@ function App() {
     <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/search/:query" element={<Search />} />
+          <Route path="/search/:searchEl" element={<Search />} />
         </Routes>
         <Footer />
     </Router>
