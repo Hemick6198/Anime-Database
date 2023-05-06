@@ -164,19 +164,19 @@
     @apply w-[229px] h-[400px] relative border border-gray-300;
   }
   .skeleton__desc {
-    @apply w-[220px] bg-gray-300 h-[85px] absolute bottom-2 border-r-gray-300;
+    @apply w-[210px] bg-gray-300 h-[85px] absolute ml-2 mx-1 bottom-2 border-r-gray-300;
   }
   .skeleton__img1 {
-    @apply min-w-[300px] bg-gray-300 h-[400px] border-gray-400 border
+    @apply min-w-[300px] w-full bg-gray-300 h-[400px] md:top-5 border-gray-400 border
   }
   .skeleton__title {
     @apply h-[28px] bg-gray-300 pb-2 w-[175px] mb-1
   }
   .skeleton__sub-title {
-    @apply h-[60px] bg-gray-300 w-[450px]
+    @apply h-[60px] bg-gray-300 min-w-[450px]
   }
   .skeleton__synopsis--title {
-    @apply h-[40px] w-[125px] mb-1 md:mb-2
+    @apply h-[40px] w-[150px] mb-1 md:mb-2
   }
   .skeleton__synopsis {
     @apply h-[300px] w-full mb-2
@@ -253,9 +253,9 @@
 }
 
 .skeleton__desc, .skeleton__title, .skeleton__sub-title, .skeleton__synopsis--title, .skeleton__synopsis {
-  background-image: linear-gradient(to right, #9e9696, #c7c0c0, #9e9696);
+  background-image: linear-gradient(to right, #d1d1d1, #eceaea);
   background-size: 220px 100%;
-  animation: shimmer 2.5s infinite linear;
+  animation: shimmer 3s infinite linear;
 }
 
 
