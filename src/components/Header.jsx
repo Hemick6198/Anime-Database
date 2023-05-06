@@ -3,14 +3,18 @@ import React from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Logo from "../Assets/logo_pink.png";
 
+
 function Header() {
-  function openMenu() {
+
+  function OpenMenu() {
     document.body.classList += " menu--open";
   }
 
-  function closeMenu() {
+  function CloseMenu() {
     document.body.classList.remove("menu--open");
   }
+
+
 
   return (
     <div className="nav__row ">
@@ -21,50 +25,46 @@ function Header() {
         </h1>
       </a>
       <div className="text-white hidden md:inline-block">
-        <a href="/" className="nav__link mx-[14px]">
-          Random
-        </a>
+      <div className=" flex flex-row items-center">
         <button className="nav__btn bg-red-400 rounded-3xl">Sign up</button>
         <button className="nav__btn bg-red-400 px-[14px]">Log in</button>
       </div>
+      </div>
       <>
-        <Bars3Icon className="hamburger__menu" onClick={openMenu} />
+        <Bars3Icon className="hamburger__menu" onClick={OpenMenu} />
         <div className="menu__backdrop">
           <XMarkIcon
             className="w-[48px] hamburger__close--icon"
-            onClick={closeMenu}
+            onClick={CloseMenu}
           />
           <ul className="flex flex-col w-full items-center">
-            <a className="hamburger__link" onClick={closeMenu()} href="">
-              Random
-            </a>
             <a
               className="hamburger__link cursor-not-allowed"
-              onClick={closeMenu()}
+              onClick={CloseMenu()}
             >
               Contact
             </a>
             <a
               className="hamburger__link cursor-not-allowed"
-              onClick={closeMenu()}
+              onClick={CloseMenu()}
             >
               About us
             </a>
             <a
               className="hamburger__link cursor-not-allowed"
-              onClick={closeMenu()}
+              onClick={CloseMenu()}
             >
               Discord
             </a>
             <button
               className="hamburger__btn nav__btn bg-red-400 rounded-3xl"
-              onClick={closeMenu()}
+              onClick={CloseMenu()}
             >
               Sign up
             </button>
             <button
-              className="hamburger__btn nav__btn bg-red-400 px-[14px]"
-              onClick={closeMenu()}
+              className="hamburger__btn nav__btn bg-red-400 px-[16px]"
+              onClick={CloseMenu()}
             >
               Log in
             </button>
