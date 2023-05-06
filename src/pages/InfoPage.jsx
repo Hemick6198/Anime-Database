@@ -61,9 +61,9 @@ function InfoPage() {
               </>
             ) : (
               <>
-                <a className="content__img" href="/">
+                <div className="content__img" href="/">
                   <img src={anime.images.jpg.large_image_url} alt="" />
-                </a>
+                </div>
                 <div className="content__description">
                   <h1 className="content__title">{anime.title}</h1>
                   <p className="content__sub-title">

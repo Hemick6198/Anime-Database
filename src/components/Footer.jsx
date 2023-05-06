@@ -9,7 +9,7 @@ function Footer() {
       <img
         src={Logo}
         alt=""
-        className="w-20"
+        className="logo"
         />
         </a>
       <div className="flex flex-col pr-8 text-center">

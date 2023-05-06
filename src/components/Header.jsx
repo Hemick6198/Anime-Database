@@ -19,7 +19,7 @@ function Header() {
   return (
     <div className="nav__row ">
       <a href="/" className="flex flex-row items-center">
-        <img src={Logo} alt="" className="w-20" />
+        <img src={Logo} alt="" className="logo" />
         <h1 className="md:text-[32px] text-[24px] font-bold sm:ml-2">
           Anime <span className="text-red-400">DB</span>
         </h1>

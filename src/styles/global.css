@@ -22,6 +22,9 @@
   .nav__row {
     @apply w-full m-auto p-[12px] flex justify-between items-center text-white sm:px-12 xl:px-[200px] drop-shadow-[0_3.5px_1.5px_rgba(0,0,0,0.9)];
   }
+  .logo {
+    @apply w-[85px];
+  }
   .nav__btn {
     @apply mx-[8px] p-[8px] rounded-3xl cursor-not-allowed;
   }
@@ -29,7 +32,7 @@
     @apply translate-x-[-1px] translate-y-[1px];
   }
   .nav__btn:hover {
-    @apply hover:bg-red-400 ;
+    @apply hover:bg-red-600 ;
   }
   .nav__link:hover {
     @apply underline-offset-4 underline cursor-pointer;
