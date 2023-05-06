@@ -203,7 +203,7 @@
     @apply sm:my-12 my-1 md:flex md:flex-col;
   }
   .content__title {
-    @apply text-lg md:text-3xl sm:mb-2 font-bold;
+    @apply text-lg md:text-3xl sm:mb-2 font-bold max-w-[550px];
   }
   .content__sub-title {
     @apply flex flex-row items-start sm:items-start justify-start pb-2 mb-2 border-b text-base;
