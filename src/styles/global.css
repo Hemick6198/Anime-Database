@@ -117,7 +117,7 @@
     @apply absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
   }
   .search__styling {
-    @apply w-[50%] md:w-[33%] lg:w-[25%] 2xl:w-[19%] p-2 flex justify-center;
+    @apply w-[50%] md:w-[33%] lg:w-[25%] 2xl:w-[19%] py-2 flex justify-center;
   }
   .search__card {
     @apply flex justify-between items-center flex-col rounded-md w-[229px];
@@ -244,7 +244,7 @@
 }
 
 @media (max-width: 500px) {
-  .anime__styling {
+  .search__styling {
     max-width: 250px;
     width: 100%;
   }
