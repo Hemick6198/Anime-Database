@@ -50,7 +50,7 @@ function LandingPage() {
                 value={searchEl}
               />
               <button
-                className="search__btn"
+                className="search__btn bg-red-400 hover:bg-red-600"
                 disabled={!searchEl}
                 onClick={() => searchDatabase()}
               >
@@ -64,7 +64,7 @@ function LandingPage() {
               </button>
             </div>
               <div className="flex flex-col">
-                <a className="text-lg text-blue-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-blue-500" href="/manga">Search our Manga Database</a>
+                <a className="text-lg text-blue-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-blue-500 hover:underline hover:underline-offset-4" href="/manga">Search our Manga Database</a>
               </div>
           </div>
         </div>

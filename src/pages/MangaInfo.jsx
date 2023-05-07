@@ -25,7 +25,7 @@ function InfoPage() {
 
   async function fetchManga() {
     setLoading(true);
-    const { data } = await axios.get(`${API}${id}`);
+    const { data } = await axios.get(`${API}${id}/full`);
     const res = data.data;
     setManga(res);
     setLoading(false);

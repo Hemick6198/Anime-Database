@@ -43,7 +43,7 @@ function InfoPage() {
         <div>
           <ArrowLeftIcon
             className="return__btn w-11 m-6 pt-2 text-lg hover:text-red-400"
-            onClick={() => navigate(`/search/${anime.title}`)}
+            onClick={() => navigate(`/anime/search/${anime.title}`)}
           />
         </div>
 

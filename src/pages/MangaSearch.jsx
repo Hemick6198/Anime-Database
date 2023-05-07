@@ -23,7 +23,7 @@ const Search = () => {
   async function fetchManga() {
     setLoading(true);
     const { data } = await axios.get(
-      `${API}${searchEl}&type=manga&min_score=1&sfw`
+      `${API}${searchEl}&type=manga&min_score=1&sfw&genres_exclude=12,49,9`
     );
     const res = data.data;
     console.log(res);
@@ -54,24 +54,6 @@ const Search = () => {
       case "ZYX":
         setMangaId([...mangaId].sort((a, b) => (b.title > a.title ? 1 : -1)));
         break;
-      case "NEW":
-        setMangaId(
-          [...mangaId].sort((a, b) => {
-            const aYear = a.aired.from.slice(0, 4);
-            const bYear = b.aired.from.slice(0, 4);
-            return bYear.localeCompare(aYear);
-          })
-        );
-        break;
-      case "OLD":
-        setMangaId(
-          [...mangaId].sort((a, b) => {
-            const aYear = a.aired.from.slice(0, 4);
-            const bYear = b.aired.from.slice(0, 4);
-            return aYear.localeCompare(bYear);
-          })
-        );
-        break;
       case "SCORE":
         setMangaId([...mangaId].sort((a, b) => b.score - a.score));
         break;
@@ -80,7 +62,6 @@ const Search = () => {
           [...mangaId].sort((a, b) => (a.popularity > b.popularity ? 1 : -1))
         );
         break;
-
       default:
         break;
     }
@@ -98,7 +79,7 @@ const Search = () => {
           <form className="w-full flex items-center justify-center pt-4">
             <input
               type="text"
-              placeholder='Search by title: "Naruto"'
+              placeholder='Search by title: "One Piece"'
               className="search__text-area relative search__page--media-sizing"
               onChange={(event) => setSearchAgain(event.target.value)}
               onKeyDown={(event) => onInput(event.key)}
@@ -142,12 +123,6 @@ const Search = () => {
             <option value="ZYX">
               Title : Z-A
             </option>
-            <option value="NEW">
-              Recent to Old
-            </option>
-            <option value="OLD">
-              Old to Recent
-            </option>
             <option value="SCORE">
               Score
             </option>
@@ -173,9 +148,9 @@ const Search = () => {
           ) : mangaId.length ? (
             mangaId
               ?.slice(0, mangaLoaded)
-              .map((manga) => (
+              .map((manga, index) => (
                 <Manga
-                  key={manga.mal_id}
+                  key={index}
                   id={manga.mal_id}
                   image={manga.images.jpg.image_url}
                   title={manga.title}

@@ -30,9 +30,6 @@
   .nav__btn:active {
     @apply translate-x-[-1px] translate-y-[1px];
   }
-  .nav__btn:hover {
-    @apply hover:bg-red-600;
-  }
   .nav__link:hover {
     @apply underline-offset-4 underline cursor-pointer;
   }
@@ -92,7 +89,7 @@
     @apply sm:mt-12 mt-6 mb-2 sm:text-[30px] text-[16px] text-center  drop-shadow-[0_3.5px_1.5px_rgba(0,0,0,0.9)];
   }
   .search__btn {
-    @apply bg-red-400 rounded-full px-5 py-3 mt-6 md:mt-0 active:transition-all active:translate-x-[-1px] active:translate-y-[1px] md:ml-4 md:px-10 hover:bg-red-600 drop-shadow-[0_3.5px_1.5px_rgba(0,0,0,0.9)];
+    @apply bg-red-400 rounded-full px-5 py-3 mt-6 md:mt-0 active:transition-all active:translate-x-[-1px] active:translate-y-[1px] md:ml-4 md:px-10  drop-shadow-[0_3.5px_1.5px_rgba(0,0,0,0.9)];
   }
   .search__text-area {
     @apply border-none outline-none xl:ml-[122px] xl:w-[40%] md:w-[55%] w-[75%] h-[60px] rounded-full bg-white text-gray-800 md:text-2xl text-base relative px-8 md:pr-16 pr-12 drop-shadow-[0_3.5px_1.5px_rgba(0,0,0,0.9)];

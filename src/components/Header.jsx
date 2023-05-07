@@ -87,14 +87,14 @@ function Header() {
           </a>
           <button
             className={`${
-              pathname.startsWith("/manga") ? "bg-blue-400" : "bg-red-400"
+              pathname.startsWith("/manga") ? "bg-blue-400 hover:bg-blue-600" : "bg-red-400 hover:bg-red-600"
             } nav__btn rounded-3xl`}
           >
             Sign up
           </button>
           <button
             className={`nav__btn ${
-              pathname.startsWith("/manga") ? "bg-blue-400" : "bg-red-400"
+              pathname.startsWith("/manga") ? "bg-blue-400 hover:bg-blue-600" : "bg-red-400 hover:bg-red-600"
             } px-[14px]`}
           >
             Log in

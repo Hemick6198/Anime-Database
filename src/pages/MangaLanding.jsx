@@ -40,14 +40,14 @@ function LandingPage() {
             <div className="search__container">
               <input
                 type="textarea"
-                placeholder='Search by title: "Naruto"'
+                placeholder='Search by title: "One Piece"'
                 className="search__text-area"
                 onChange={(e) => setSearchEl(e.target.value)}
                 onKeyDown={(event) => onInput(event.key)}
                 value={searchEl}
               />
               <button
-                className="search__btn bg-blue-400"
+                className="search__btn bg-blue-400 hover:bg-blue-600"
                 disabled={!searchEl}
                 onClick={() => searchDatabase()}
               >
