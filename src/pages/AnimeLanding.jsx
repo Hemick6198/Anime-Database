@@ -63,6 +63,9 @@ function LandingPage() {
                 )}
               </button>
             </div>
+              <div className="flex flex-col">
+                <a className="text-lg text-blue-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-blue-500" href="/manga">Search our Manga Database</a>
+              </div>
           </div>
         </div>
       </div>

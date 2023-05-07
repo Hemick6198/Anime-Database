@@ -10,19 +10,23 @@ function Anime({ id, title, score, image, type }) {
     navigate(`/anime/${id}`);
   };
 
-
   return (
-    <div className="anime__styling">
-      <div className="anime__card" onClick={onPosterClick}>
-        <figure className="anime__img--wrapper">
-          <img src={image} alt="Anime Img" className="max-h-[300px]" />
+    <div className="search__styling">
+      <div className="search__card bg-red-400" onClick={onPosterClick}>
+        <figure className="search__img--wrapper border-red-400">
+          <img src={image} alt="search Img" className="max-h-[300px]" />
         </figure>
-        <div className="anime__desc">
-          <p className=" w-[220px] text-center mt-1">{title.slice(0, 50)}</p>
-          <p className="anime__score">
-            <StarIcon className="w-[20px] mr-2 text-yellow-400" />{score} / 10
+        <div className="search__desc bg-red-400 border-red-400">
+          <p className=" w-[220px] text-center mt-1 drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.9)]">
+            {title.slice(0, 50)}
           </p>
-          <p className="text-center">{type}</p>
+          <p className="search__score drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.9)]">
+            <StarIcon className="w-[20px] mr-2 text-yellow-400" />
+            {score} / 10
+          </p>
+          <p className="text-center drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.9)]">
+            {type}
+          </p>
         </div>
       </div>
     </div>

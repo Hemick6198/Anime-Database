@@ -119,38 +119,35 @@
   .drop-down__list {
     @apply absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
   }
-  .anime__styling {
+  .search__styling {
     @apply w-[50%] md:w-[33%] lg:w-[25%] 2xl:w-[19%] p-2 flex justify-center;
   }
-  .anime__card {
-    @apply flex justify-center items-center flex-col rounded-md w-[229px] bg-red-400;
+  .search__card {
+    @apply flex justify-between items-center flex-col rounded-md w-[229px];
   }
-  .anime__img--wrapper {
-    @apply flex items-center justify-center border-red-400 border-[6px] rounded-md;
+  .search__img--wrapper {
+    @apply flex items-center justify-center  border-[6px] rounded-md;
   }
-  .anime__desc {
-    @apply flex items-center justify-center flex-col w-[229px] border-red-400 border-4 bg-red-400 rounded-md;
+  .search__desc {
+    @apply flex items-center justify-center flex-col w-[229px] border-4  rounded-md;
   }
-  .anime__score {
+  .search__score {
     @apply flex flex-row items-center justify-center w-[220px];
   }
-  .anime__grouping {
+  .search__grouping {
     @apply flex flex-wrap justify-around lg:px-[40px] 2xl:px-[150px] pb-8;
   }
-  .anime__styling:hover {
+  .search__styling:hover {
     @apply translate-y-[-6px] transition-all ease-in-out duration-300;
   }
-  .anime__img--wrapper:active {
+  .search__img--wrapper:active {
     @apply scale-105 transition-all ease-in-out duration-300;
-  }
-  .sort__options {
-    @apply my-4 max-sm:mr-32 hover:bg-red-400;
   }
   .load__more {
     @apply flex items-center justify-center my-6 pb-12;
   }
   .load__anime--btn {
-    @apply bg-red-400 p-3 rounded-full;
+    @apply p-3 rounded-full;
   }
 
   /* 
@@ -169,7 +166,7 @@
     @apply w-[210px] bg-gray-400 h-[85px] absolute ml-2 mx-1 bottom-2;
   }
   .skeleton__img1 {
-    @apply bg-gray-500 md:h-[420px] h-[400px] md:top-6 md:left-0 left-16 border-gray-300 border md:m-12 md:mr-24 md:scale-110 flex items-center justify-center w-[300px] md:w-[350px];
+    @apply bg-gray-500 md:h-[420px] h-[500px] md:top-6 md:left-0 left-12 border-gray-300 border md:m-12 md:mr-24 md:scale-110 flex items-center justify-center w-[350px] md:w-[350px];
   }
   .skeleton__title {
     @apply h-[28px] pb-2 w-[175px] mb-1;
@@ -196,7 +193,7 @@
   */
 
   .return__btn {
-    @apply flex items-start justify-start hover:cursor-pointer hover:text-red-400;
+    @apply flex items-start justify-start hover:cursor-pointer;
   }
   .content__container {
     @apply flex flex-row items-start justify-center h-full md:h-[80vh] pt-2;

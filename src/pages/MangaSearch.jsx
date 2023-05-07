@@ -2,7 +2,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Header from "../components/Header";
 import NoTitlesImage from "../Assets/nothing_img.png";
-import Anime from "../components/Anime";
+import Manga from "../components/Manga";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import {
@@ -11,52 +11,52 @@ import {
 } from "@heroicons/react/24/outline";
 
 // &type=anime
-const API = `https://api.jikan.moe/v4/anime?q=`;
+const API = `https://api.jikan.moe/v4/manga?q=`;
 
 const Search = () => {
   const { searchEl } = useParams();
   const [loading, setLoading] = useState(false);
   const [searchAgain, setSearchAgain] = useState(searchEl);
-  const [animeId, setAnimeId] = useState([]);
-  const [animeLoaded, setAnimeLoaded] = useState(10);
+  const [mangaId, setMangaId] = useState([]);
+  const [mangaLoaded, setMangaLoaded] = useState(10);
 
-  async function fetchAnime() {
+  async function fetchManga() {
     setLoading(true);
     const { data } = await axios.get(
-      `${API}${searchEl}&type=anime&min_score=1&sfw`
+      `${API}${searchEl}&type=manga&min_score=1&sfw`
     );
     const res = data.data;
     console.log(res);
     setTimeout(() => {
-      setAnimeId(res);
+      setMangaId(res);
     });
     setLoading(false);
   }
 
-  const searchAnimeAgain = () => {
+  const searchMangaAgain = () => {
     setLoading(true);
-    fetchAnime(searchAgain);
+    fetchManga(searchAgain);
     window.history.replaceState(null, "", `${searchAgain}`);
     setLoading(false);
   };
 
   function onInput(key) {
     if (key === "Enter" && searchAgain) {
-      searchAnimeAgain();
+      searchMangaAgain();
     }
   }
 
-  function sortAnime(filter) {
+  function sortManga(filter) {
     switch (filter) {
       case "ABC":
-        setAnimeId([...animeId].sort((a, b) => (a.title > b.title ? 1 : -1)));
+        setMangaId([...mangaId].sort((a, b) => (a.title > b.title ? 1 : -1)));
         break;
       case "ZYX":
-        setAnimeId([...animeId].sort((a, b) => (b.title > a.title ? 1 : -1)));
+        setMangaId([...mangaId].sort((a, b) => (b.title > a.title ? 1 : -1)));
         break;
       case "NEW":
-        setAnimeId(
-          [...animeId].sort((a, b) => {
+        setMangaId(
+          [...mangaId].sort((a, b) => {
             const aYear = a.aired.from.slice(0, 4);
             const bYear = b.aired.from.slice(0, 4);
             return bYear.localeCompare(aYear);
@@ -64,8 +64,8 @@ const Search = () => {
         );
         break;
       case "OLD":
-        setAnimeId(
-          [...animeId].sort((a, b) => {
+        setMangaId(
+          [...mangaId].sort((a, b) => {
             const aYear = a.aired.from.slice(0, 4);
             const bYear = b.aired.from.slice(0, 4);
             return aYear.localeCompare(bYear);
@@ -73,11 +73,11 @@ const Search = () => {
         );
         break;
       case "SCORE":
-        setAnimeId([...animeId].sort((a, b) => b.score - a.score));
+        setMangaId([...mangaId].sort((a, b) => b.score - a.score));
         break;
       case "POPULAR":
-        setAnimeId(
-          [...animeId].sort((a, b) => (a.popularity > b.popularity ? 1 : -1))
+        setMangaId(
+          [...mangaId].sort((a, b) => (a.popularity > b.popularity ? 1 : -1))
         );
         break;
 
@@ -87,7 +87,7 @@ const Search = () => {
   }
 
   useEffect(() => {
-    fetchAnime();
+    fetchManga();
   }, []);
 
   return (
@@ -105,9 +105,9 @@ const Search = () => {
               value={searchAgain}
             />
             <button
-              className="m-0 ml-2 absolute text-red-400 lg:right-[30%] right-[15%] md:right-[25%]"
+              className="m-0 ml-2 absolute text-blue-400 hover:text-blue-600 lg:right-[30%] right-[15%] md:right-[25%]"
               disabled={!searchAgain}
-              onClick={() => searchAnimeAgain()}
+              onClick={() => searchMangaAgain()}
             >
               {loading ? (
                 <ArrowPathIcon
@@ -122,7 +122,7 @@ const Search = () => {
         <div className="flex justify-between m-[16px] md:mx-[48px] lg:mx-[90px] xl:px-[200px] ">
           <span className="mt-1 text-sm md:text-lg">
             Search Results for&nbsp;:&nbsp;
-            <span className="text-red-400 text-lg md:text-2xl">
+            <span className="text-blue-400 text-lg md:text-2xl">
               &nbsp;{searchEl}
             </span>
           </span>
@@ -131,12 +131,12 @@ const Search = () => {
             defaultValue={"DEFAULT"}
             id="filter"
             className="bg-black hover:bg-black outline-none border-none max-sm:w-[100px] max-sm:mr-4 md:px-4"
-            onChange={(e) => sortAnime(e.target.value)}
+            onChange={(e) => sortManga(e.target.value)}
           >
-            <option className="sort__options" value="DEFAULT" disabled>
+            <option value="DEFAULT" disabled>
               Sort by :
             </option>
-            <option className="sort__options" value="ABC">
+            <option value="ABC">
               Title : A-Z
             </option>
             <option value="ZYX">
@@ -156,11 +156,11 @@ const Search = () => {
             </option>
           </select>
         </div>
-        <div className="anime__grouping ">
+        <div className="search__grouping ">
           {loading ? (
-            new Array(animeLoaded).fill(0).map((_, id) => (
-              <div className="anime__styling">
-                <div className="anime__card bg-gray-500">
+            new Array(mangaLoaded).fill(0).map((_, id) => (
+              <div className="search__styling">
+                <div className="search__card bg-gray-500">
                   <div
                     className=" skeleton skeleton__img lg:mx-[20px] m-2"
                     key={id}
@@ -170,17 +170,17 @@ const Search = () => {
                 </div>
               </div>
             ))
-          ) : animeId.length ? (
-            animeId
-              ?.slice(0, animeLoaded)
-              .map((anime) => (
-                <Anime
-                  key={anime.mal_id}
-                  id={anime.mal_id}
-                  image={anime.images.jpg.image_url}
-                  title={anime.title}
-                  type={anime.type}
-                  score={anime.score}
+          ) : mangaId.length ? (
+            mangaId
+              ?.slice(0, mangaLoaded)
+              .map((manga) => (
+                <Manga
+                  key={manga.mal_id}
+                  id={manga.mal_id}
+                  image={manga.images.jpg.image_url}
+                  title={manga.title}
+                  type={manga.type}
+                  score={manga.score}
                 />
               ))
           ) : (
@@ -191,12 +191,12 @@ const Search = () => {
           )}
         </div>
         <div className="load__more">
-          {animeLoaded < (animeId.length && 25) ? (
+          {mangaLoaded < (mangaId.length && 25) ? (
             <button
-              className="load__anime--btn"
-              onClick={() => setAnimeLoaded(animeLoaded + 10)}
+              className={`bg-blue-400 load__anime--btn`}
+              onClick={() => setMangaLoaded(mangaLoaded + 10)}
             >
-              Load More Anime
+              Load More Manga
             </button>
           ) : (
             ""
