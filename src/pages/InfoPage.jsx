@@ -51,12 +51,14 @@ function InfoPage() {
           <div className="md:flex md:flex-row">
             {loading ? (
               <>
-                <div className="content__img skeleton__img1 skeleton"></div>
+                <div className="skeleton__img1 skeleton"></div>
                 <div className="content__description">
-                  <div className="content__title skeleton__title"></div>
-                  <div className="content__sub-title skeleton__sub-title"></div>
+                  <div className="content__title skeleton__title skeleton"></div>
+                  <div className="content__sub-title skeleton__sub-title skeleton"></div>
                   <div className="content__synopsis--title skeleton__synopsis--title skeleton"></div>
                   <div className="content__synopsis skeleton__synopsis skeleton"></div>
+                  <div className="skeleton__type skeleton"></div>
+                  <div className="skeleton__airing skeleton"></div>
                 </div>
               </>
             ) : (
