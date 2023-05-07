@@ -15,7 +15,7 @@ function LandingPage() {
   function searchDatabase() {
     setLoading(true);
     setTimeout(() => {
-      navigate(`/search/${searchEl}`);
+      navigate(`/anime/search/${searchEl}`);
     }, 1000);
   }
 

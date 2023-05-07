@@ -11,7 +11,7 @@ function App() {
     <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/search/:searchEl" element={<Search />} />
+          <Route path="/anime/search/:searchEl" element={<Search />} />
           <Route path="/anime/:id" element={<InfoPage />} />
         </Routes>
         <Footer />

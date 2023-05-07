@@ -7,7 +7,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import {
   ArrowPathIcon,
-  ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
@@ -27,6 +26,7 @@ const Search = () => {
       `${API}${searchEl}&type=anime&min_score=1&sfw`
     );
     const res = data.data;
+    console.log(res);
     setTimeout(() => {
       setAnimeId(res);
     });
@@ -54,9 +54,33 @@ const Search = () => {
       case "ZYX":
         setAnimeId([...animeId].sort((a, b) => (b.title > a.title ? 1 : -1)));
         break;
-      case "RATING":
+      case "NEW":
+        setAnimeId(
+          [...animeId].sort((a, b) => {
+            const aYear = a.aired.from.slice(0, 4);
+            const bYear = b.aired.from.slice(0, 4);
+            return bYear.localeCompare(aYear);
+          })
+        );
+        break;
+      case "OLD":
+        setAnimeId(
+          [...animeId].sort((a, b) => {
+            const aYear = a.aired.from.slice(0, 4);
+            const bYear = b.aired.from.slice(0, 4);
+            return aYear.localeCompare(bYear);
+          })
+        );
+        break;
+      case "SCORE":
         setAnimeId([...animeId].sort((a, b) => b.score - a.score));
         break;
+      case "POPULAR":
+        setAnimeId(
+          [...animeId].sort((a, b) => (a.popularity > b.popularity ? 1 : -1))
+        );
+        break;
+
       default:
         break;
     }
@@ -106,22 +130,37 @@ const Search = () => {
           <select
             defaultValue={"DEFAULT"}
             id="filter"
-            className="bg-black outline-none border-none max-sm:w-[100px] max-sm:mr-4"
+            className="bg-black hover:bg-black outline-none border-none max-sm:w-[100px] max-sm:mr-4 md:px-4"
             onChange={(e) => sortAnime(e.target.value)}
           >
             <option className="sort__options" value="DEFAULT" disabled>
               Sort by :
             </option>
-            <option value="ABC">Ascending Title</option>
-            <option value="ZYX">Descending Title</option>
-            <option value="RATING">Rating</option>
+            <option className="sort__options" value="ABC">
+              Title : A-Z
+            </option>
+            <option value="ZYX">
+              Title : Z-A
+            </option>
+            <option value="NEW">
+              Recent to Old
+            </option>
+            <option value="OLD">
+              Old to Recent
+            </option>
+            <option value="SCORE">
+              Score
+            </option>
+            <option value="POPULAR">
+              Popular
+            </option>
           </select>
         </div>
         <div className="anime__grouping ">
           {loading ? (
             new Array(animeLoaded).fill(0).map((_, id) => (
               <div className="anime__styling">
-                <div className="anime__card bg-gray-300">
+                <div className="anime__card bg-gray-500">
                   <div
                     className=" skeleton skeleton__img lg:mx-[20px] m-2"
                     key={id}
@@ -157,7 +196,7 @@ const Search = () => {
               className="load__anime--btn"
               onClick={() => setAnimeLoaded(animeLoaded + 10)}
             >
-              Load Anime
+              Load More Anime
             </button>
           ) : (
             ""
