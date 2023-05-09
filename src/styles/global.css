@@ -120,7 +120,7 @@
     @apply w-[50%] md:w-[33%] lg:w-[25%] 2xl:w-[19%] py-2 flex justify-center;
   }
   .search__card {
-    @apply flex justify-between items-center flex-col rounded-md w-[229px];
+    @apply flex justify-between items-center flex-col rounded-md w-[229px] my-4 cursor-pointer;
   }
   .search__img--wrapper {
     @apply flex items-center justify-center  border-[6px] rounded-md;

@@ -76,7 +76,7 @@ const Search = () => {
       <Header />
       <div className="search__page--content">
         <div className="w-full flex items-center justify-center flex-col">
-          <form className="w-full flex items-center justify-center pt-4">
+          <form className="w-full flex items-center justify-center pt-12 pb-4">
             <input
               type="text"
               placeholder='Search by title: "One Piece"'
@@ -100,7 +100,7 @@ const Search = () => {
             </button>
           </form>
         </div>
-        <div className="flex justify-between m-[16px] md:mx-[48px] lg:mx-[90px] xl:px-[200px] ">
+        <div className="flex justify-between m-[16px] mx-[10%]">
           <span className="mt-1 text-sm md:text-lg">
             Search Results for&nbsp;:&nbsp;
             <span className="text-blue-400 text-lg md:text-2xl">
@@ -111,7 +111,7 @@ const Search = () => {
           <select
             defaultValue={"DEFAULT"}
             id="filter"
-            className="bg-black hover:bg-black outline-none border-none max-sm:w-[100px] max-sm:mr-4 md:px-4"
+            className="bg-black hover:bg-black outline-none border-none max-sm:w-[100px] max-sm:mr-4 md:px-4 cursor-pointer"
             onChange={(e) => sortManga(e.target.value)}
           >
             <option value="DEFAULT" disabled>

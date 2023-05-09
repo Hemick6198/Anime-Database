@@ -50,7 +50,7 @@ function LandingPage() {
                 value={searchEl}
               />
               <button
-                className="search__btn bg-red-400 hover:bg-red-600"
+                className="search__btn bg-red-400 hover:bg-red-600 cursor-pointer"
                 disabled={!searchEl}
                 onClick={() => searchDatabase()}
               >
