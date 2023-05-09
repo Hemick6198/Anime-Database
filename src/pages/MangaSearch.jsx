@@ -100,7 +100,7 @@ const Search = () => {
             </button>
           </form>
         </div>
-        <div className="flex justify-between m-[16px] mx-[10%]">
+        <div className="flex justify-between m-[18px] xl:mx-[12%] 2xl:mx-[14%]">
           <span className="mt-1 text-sm md:text-lg">
             Search Results for&nbsp;:&nbsp;
             <span className="text-blue-400 text-lg md:text-2xl">

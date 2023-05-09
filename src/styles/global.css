@@ -132,7 +132,7 @@
     @apply flex flex-row items-center justify-center w-[220px];
   }
   .search__grouping {
-    @apply flex flex-wrap justify-around lg:px-[40px] 2xl:px-[150px] pb-8;
+    @apply flex flex-wrap justify-around lg:px-[40px] 2xl:px-[12%] pb-8;
   }
   .search__styling:hover {
     @apply translate-y-[-6px] transition-all ease-in-out duration-300;
