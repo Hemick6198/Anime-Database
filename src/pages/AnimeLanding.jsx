@@ -3,10 +3,6 @@ import { MagnifyingGlassIcon, ArrowPathIcon } from "@heroicons/react/24/solid";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 
-// https://wallpaperaccess.com/full/3903023.jpg
-// https://r4.wallpaperflare.com/wallpaper/393/822/541/anime-stores-japan-wallpaper-11ae745fb00628a12c01f87d6083e7ee.jpg
-// https://r4.wallpaperflare.com/wallpaper/69/761/241/anime-original-shop-wallpaper-f53329dde9bdd6f95fd518ea532d07f9.jpg
-
 function LandingPage() {
   let navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -16,7 +12,7 @@ function LandingPage() {
     setLoading(true);
     setTimeout(() => {
       navigate(`/anime/search/${searchEl}`);
-    }, 1000);
+    }, 500);
   }
 
   function onInput(key) {
@@ -63,9 +59,14 @@ function LandingPage() {
                 )}
               </button>
             </div>
-              <div className="flex flex-col">
-                <a className="text-lg text-blue-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-blue-500 hover:underline hover:underline-offset-4" href="/manga">Search our Manga Database</a>
-              </div>
+            <div className="flex flex-col">
+              <a
+                className="text-lg text-blue-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-blue-500 hover:underline hover:underline-offset-4"
+                href="/manga"
+              >
+                Search our Manga Database
+              </a>
+            </div>
           </div>
         </div>
       </div>

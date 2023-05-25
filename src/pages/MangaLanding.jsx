@@ -13,7 +13,7 @@ function LandingPage() {
     setLoading(true);
     setTimeout(() => {
       navigate(`/manga/search/${searchEl}`);
-    }, 1000);
+    }, 500);
   }
 
   function onInput(key) {

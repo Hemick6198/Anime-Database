@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import NoTitlesImage from "../Assets/nothing_img.png";
 import Manga from "../components/Manga";
@@ -10,7 +10,6 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
-// &type=anime
 const API = `https://api.jikan.moe/v4/manga?q=`;
 
 const Search = () => {
@@ -26,10 +25,7 @@ const Search = () => {
       `${API}${searchEl}&type=manga&min_score=1&sfw&genres_exclude=12,49,9`
     );
     const res = data.data;
-    console.log(res);
-    setTimeout(() => {
-      setMangaId(res);
-    });
+    setMangaId(res);
     setLoading(false);
   }
 
@@ -104,7 +100,7 @@ const Search = () => {
           <span className="mt-1 text-sm md:text-lg">
             Search Results for&nbsp;:&nbsp;
             <span className="text-blue-400 text-lg md:text-2xl">
-              &nbsp;{searchEl}
+              &nbsp;"{searchEl}"
             </span>
           </span>
 
@@ -117,29 +113,18 @@ const Search = () => {
             <option value="DEFAULT" disabled>
               Sort by :
             </option>
-            <option value="ABC">
-              Title : A-Z
-            </option>
-            <option value="ZYX">
-              Title : Z-A
-            </option>
-            <option value="SCORE">
-              Score
-            </option>
-            <option value="POPULAR">
-              Popular
-            </option>
+            <option value="ABC">Title : A-Z</option>
+            <option value="ZYX">Title : Z-A</option>
+            <option value="SCORE">Score</option>
+            <option value="POPULAR">Popular</option>
           </select>
         </div>
         <div className="search__grouping ">
           {loading ? (
-            new Array(mangaLoaded).fill(0).map((_, id) => (
-              <div className="search__styling">
+            new Array(mangaLoaded).fill(0).map((_, index) => (
+              <div className="search__styling" key={index}>
                 <div className="search__card bg-gray-500">
-                  <div
-                    className=" skeleton skeleton__img lg:mx-[20px] m-2"
-                    key={id}
-                  >
+                  <div className=" skeleton skeleton__img lg:mx-[20px] m-2">
                     <div className="skeleton skeleton__desc"></div>
                   </div>
                 </div>
