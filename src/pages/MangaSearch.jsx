@@ -22,7 +22,7 @@ const Search = () => {
   async function fetchManga() {
     setLoading(true);
     const { data } = await axios.get(
-      `${API}${searchEl}&type=manga&min_score=1&sfw&genres_exclude=12,49,9`
+      `${API}${searchEl}&min_score=1&sfw&genres_exclude=12,49,9`
     );
     const res = data.data;
     setMangaId(res);
