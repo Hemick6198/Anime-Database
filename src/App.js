@@ -11,15 +11,15 @@ import MangaInfo from "./pages/MangaInfo";
 function App() {
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={<AnimeLanding />} />
-          <Route path="/anime/search/:searchEl" element={<AnimeSearch />} />
-          <Route path="/anime/:id" element={<AnimeInfo />} />
-          <Route path="/manga" element={<MangaLanding />} />
-          <Route path="/manga/search/:searchEl" element={<MangaSearch />} />
-          <Route path="/manga/:id" element={<MangaInfo />} />
-        </Routes>
-        <Footer />
+      <Routes>
+        <Route path="/" element={<AnimeLanding />} />
+        <Route path="/anime/search/:searchEl" element={<AnimeSearch />} />
+        <Route path="/anime/:id" element={<AnimeInfo />} />
+        <Route path="/manga" element={<MangaLanding />} />
+        <Route path="/manga/search/:searchEl" element={<MangaSearch />} />
+        <Route path="/manga/:id" element={<MangaInfo />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }

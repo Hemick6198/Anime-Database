@@ -14,7 +14,7 @@ function Anime({ id, title, score, image, type }) {
     <div className="search__styling">
       <div className="search__card bg-red-400" onClick={onPosterClick}>
         <figure className="search__img--wrapper border-red-400">
-          <img src={image} alt="search Img" className="max-h-[300px]" />
+          <img src={image} alt="search Img" className="h-[300px]" />
         </figure>
         <div className="search__desc bg-red-400 border-red-400">
           <p className=" w-[220px] text-center mt-1 drop-shadow-[0_2px_1.5px_rgba(0,0,0,0.9)]">

@@ -3,7 +3,6 @@ import { MagnifyingGlassIcon, ArrowPathIcon } from "@heroicons/react/24/solid";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 
-
 function LandingPage() {
   let navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -61,8 +60,13 @@ function LandingPage() {
               </button>
             </div>
             <div className="flex flex-col">
-                <a className="text-lg text-red-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-red-600 hover:underline hover:underline-offset-4" href="/">Search our Anime Database</a>
-              </div>
+              <a
+                className="text-lg text-red-400 drop-shadow-[0_1.5px_1px_rgba(0,0,0,0.9)] hover:text-red-600 hover:underline hover:underline-offset-4"
+                href="/"
+              >
+                Search our Anime Database
+              </a>
+            </div>
           </div>
         </div>
       </div>
