@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { MagnifyingGlassIcon, ArrowPathIcon } from "@heroicons/react/24/solid";
 import Header from "../components/Header";
@@ -39,13 +40,13 @@ function LandingPage() {
             <div className="search__container">
               <input
                 type="textarea"
-                placeholder='Search by title: "Naruto"'
+                placeholder='Search by title: "Bleach"'
                 className="search__text-area"
                 onChange={(e) => setSearchEl(e.target.value)}
                 onKeyDown={(event) => onInput(event.key)}
                 value={searchEl}
               />
-              <button
+              <a
                 className="search__btn bg-red-400 hover:bg-red-600 cursor-pointer"
                 disabled={!searchEl}
                 onClick={() => searchDatabase()}
@@ -57,7 +58,7 @@ function LandingPage() {
                 ) : (
                   <MagnifyingGlassIcon className="w-10" />
                 )}
-              </button>
+              </a>
             </div>
             <div className="flex flex-col">
               <a
