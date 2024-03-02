@@ -45,6 +45,7 @@ const Search = () => {
       searchAnimeAgain();
     }
   }
+  console.log(animeId)
 
   function sortAnime(filter) {
     switch (filter) {
@@ -174,7 +175,7 @@ const Search = () => {
           )}
         </div>
         <div className="load__more">
-          {animeLoaded < (animeId.length && 25) ? (
+          {animeLoaded < animeId.length ? (
             <button
               className="load__anime--btn bg-red-400 hover:bg-red-600"
               onClick={() => setAnimeLoaded(animeLoaded + 10)}

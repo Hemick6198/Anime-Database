@@ -151,7 +151,7 @@ const Search = () => {
           )}
         </div>
         <div className="load__more">
-          {mangaLoaded < (mangaId.length && 25) ? (
+          {mangaLoaded < mangaId.length ? (
             <button
               className={`bg-blue-400 load__anime--btn`}
               onClick={() => setMangaLoaded(mangaLoaded + 10)}
