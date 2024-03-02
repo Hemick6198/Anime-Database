@@ -42,7 +42,7 @@ function InfoPage() {
       <div className="bg-black text-white w-full px-4 lg:px-[120px]">
         <div>
           <ArrowLeftIcon
-            className="return__btn w-11 m-6 pt-2 text-lg hover:text-blue-400"
+            className="return__btn w-11 m-2 md:m-6 pt-8 text-lg hover:text-blue-400"
             onClick={() => navigate(`/manga/search/${manga.title}`)}
           />
         </div>
