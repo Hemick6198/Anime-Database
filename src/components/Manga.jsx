@@ -9,7 +9,7 @@ function Anime({ id, title, score, image, type }) {
     e.preventDefault();
     navigate(`/manga/${id}`);
   };
-
+  
 
   return (
     <div className="search__styling">
