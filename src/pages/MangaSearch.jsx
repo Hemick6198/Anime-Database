@@ -70,7 +70,7 @@ const Search = () => {
   return (
     <>
       <Header />
-      <div className="search__page--content">
+      <div className="search__page--content overflow-hidden">
         <div className="w-full flex items-center justify-center flex-col">
           <form className="w-full flex items-center justify-center pt-12 pb-4">
             <input

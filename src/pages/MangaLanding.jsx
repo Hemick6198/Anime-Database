@@ -22,7 +22,7 @@ function LandingPage() {
   }
 
   return (
-    <div className="text-white overflow-hidden w-full bg-cover h-[100vh] bg-[url('https://r4.wallpaperflare.com/wallpaper/142/751/831/landscape-anime-digital-art-fantasy-art-wallpaper-9b468c3dc3116f4905f43bc9cddc0cf0.jpg')]">
+    <div className="text-white w-full bg-cover h-[100vh] bg-[url('https://r4.wallpaperflare.com/wallpaper/142/751/831/landscape-anime-digital-art-fantasy-art-wallpaper-9b468c3dc3116f4905f43bc9cddc0cf0.jpg')]">
       <div className="backdrop-blur-sm h-[100vh]">
         <Header />
         <div className="hide__body">

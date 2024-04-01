@@ -23,7 +23,7 @@ function LandingPage() {
   }
 
   return (
-    <div className="text-white overflow-hidden w-full bg-cover h-[100vh] bg-[url('https://r4.wallpaperflare.com/wallpaper/69/761/241/anime-original-shop-wallpaper-f53329dde9bdd6f95fd518ea532d07f9.jpg')]">
+    <div className="text-white w-full bg-cover h-[100vh] bg-[url('https://r4.wallpaperflare.com/wallpaper/69/761/241/anime-original-shop-wallpaper-f53329dde9bdd6f95fd518ea532d07f9.jpg')]">
       <div className="backdrop-blur-sm h-[100vh]">
         <Header loading={loading} />
         <div className="hide__body">

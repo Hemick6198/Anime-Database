@@ -4,7 +4,10 @@
 
 @layer base {
   body {
-    @apply bg-[#161616] overflow-x-hidden;
+    @apply bg-[#161616];
+  }
+  * {
+    @apply overflow-x-hidden;
   }
   html {
     font-family: Mukta, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -118,10 +121,10 @@
     @apply absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
   }
   .search__styling {
-    @apply w-[50%] md:w-[33%] lg:w-[25%] 2xl:w-[19%] py-2 flex justify-center;
+    @apply w-[50%] md:w-[33%] lg:w-[25%] 2xl:w-[19%] p-2 min-w-[249px] flex justify-center;
   }
   .search__card {
-    @apply flex justify-around items-center flex-col rounded-md w-[229px] my-4 cursor-pointer;
+    @apply flex justify-around items-center flex-col rounded-md w-full my-4 cursor-pointer;
   }
   .search__img--wrapper {
     @apply flex items-center justify-center  border-[6px] rounded-md;
