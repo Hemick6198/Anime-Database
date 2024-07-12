@@ -29,9 +29,6 @@ const Search = () => {
     setLoading(false);
   }
 
-  useEffect(() => {
-    fetchAnime();
-  }, []);
 
   const searchAnimeAgain = () => {
     setLoading(true);

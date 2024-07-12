@@ -27,6 +27,7 @@ const Search = () => {
     const res = data.data;
     setMangaId(res);
     setLoading(false);
+    console.log(res);
   }
 
   const searchMangaAgain = () => {
